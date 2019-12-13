@@ -10,7 +10,8 @@ public class DriverManager {
     public static WebDriver driver = null;
     public DriverManager(){
         ConfigFileReader configFileReader = new ConfigFileReader();
-        System.setProperty("webdriver.chrome.driver", "");
+        String chromeDriverPath = System.getProperty("user.dir")+"/src/test/resources/drivers/chromedriver";
+        System.setProperty("webdriver.chrome.driver", chromeDriverPath );
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(5000, TimeUnit.SECONDS);
