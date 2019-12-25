@@ -1,3 +1,4 @@
 /.idea/
 /speeapptestng.iml
 /src/test/resources/config.properties
+/target/
