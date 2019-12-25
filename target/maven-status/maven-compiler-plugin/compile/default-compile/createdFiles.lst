@@ -1,0 +1,8 @@
+pages/CartPage.class
+util/BaseUtil.class
+pages/ProductPage.class
+util/ConfigFileReader.class
+pages/HomePage.class
+util/DriverManager.class
+pages/LoginPage.class
+pages/BagsPage.class

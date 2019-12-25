@@ -3,10 +3,10 @@ package pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import util.BaseTest;
+import util.BaseUtil;
 import util.DriverManager;
 
-public class CartPage extends BaseTest {
+public class CartPage extends BaseUtil {
 
     @FindBy(id = "order_line_items_attributes_0_quantity")
     private WebElement quantity;
