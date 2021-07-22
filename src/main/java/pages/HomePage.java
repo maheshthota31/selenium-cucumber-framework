@@ -1,45 +1,24 @@
 package pages;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import util.BaseUtil;
-import util.DriverManager;
 
-import java.util.List;
+public class HomePage {
 
-public class HomePage extends BaseUtil {
+    private WebDriver driver;
 
-    @FindBy(className = "nav-link text-white")
-    private WebElement loginLink;
+    @FindBy(xpath = "//*[@id='main-nav-bar']/ul/li[2]/a")
+    private WebElement menNavLink;
 
-    @FindBy(xpath = "//*[text()=\"Bags\"]")
-    private WebElement bagsLink;
-
-    @FindAll(@FindBy(xpath = "//*[text()=\"Bags\"]"))
-    private List<WebElement> bagLinks;
-
-    public HomePage(){
-        PageFactory.initElements(DriverManager.driver, this);
+    public HomePage(WebDriver driver) {
+        this.driver = driver;
+        PageFactory.initElements(driver, this);
     }
 
-    public LoginPage clickOnLogin(){
-
-        loginLink.click();
-        return new LoginPage();
+    public MenPage navigateToMenPage() {
+        menNavLink.click();
+        return new MenPage(driver);
     }
-
-    public BagsPage clickOnBagsCategory(){
-        bagsLink.click();
-        return new BagsPage();
-    }
-
-    public boolean isBagsCategoryDisplayed(){
-        if(bagLinks.size()>0){
-            return true;
-        }
-        return true;
-    }
-
 }
